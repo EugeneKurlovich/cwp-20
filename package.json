@@ -1,0 +1,9 @@
+{
+    "name": "cwp-20",
+    "author": "Eugene",
+    "dependencies": {
+        "express": "^4.16.2",
+        "pug": "^2.0.0-rc.4",
+        "sequelize": "^4.28.6"
+    }
+}
