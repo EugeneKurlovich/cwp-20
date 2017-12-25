@@ -1,0 +1,15 @@
+include ../layout.pug
+
+p: h3 Name: #{city.Name}
+p: h3 CountryCode: #{city.CountryCode}
+p: h3 District: #{city.District}
+p: h3 Population: #{city.Population}
+|---------------------------
+p: h3 Country info
+p: h3 Name: #{country.Name}
+p: h3 Continent: #{country.Continent}
+p: h3 Official Languages:
+each language in officialLanguages
+    p= "Name: " + language.Language
+p: h3 Capital name: #{country['cities.Name']}
+a(href=`/cities/${country['cities.ID']}`)= "Capital url"

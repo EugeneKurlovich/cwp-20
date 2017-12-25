@@ -1,0 +1,11 @@
+include ../layout.pug
+
+h1 Countries / #{paginationInfo.offset + 1} - #{paginationInfo.offset + paginationInfo.limit}
+
+each country in countries
+    a(href=`/countries/${country.Code}`)= country.Name + ' ' + country.Continent
+    br
+
+
+- for (let i = 1; i <= pages; i++)
+    a(href=`/countries?page=${i}` class={active: i === page + 1})= i + ' '

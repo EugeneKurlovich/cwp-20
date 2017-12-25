@@ -1,0 +1,30 @@
+include ../layout.pug
+
+p: h3 Code: #{country.Code}
+p: h3 Name: #{country.Name}
+p: h3 Continent: #{country.Continent}
+p: h3 Region: #{country.Region}
+p: h3 SurfaceArea: #{country.SurfaceArea}
+p: h3 IndepYear: #{country.IndepYear}
+p: h3 Population: #{country.Population}
+p: h3 LifeExpectancy: #{country.LifeExpectancy}
+p: h3 GNP: #{country.GNP}
+p: h3 GNPOld: #{country.GNPOld}
+p: h3 LocalName: #{country.LocalName}
+p: h3 GovernmentForm: #{country.GovernmentForm}
+p: h3 HeadOfState: #{country.HeadOfState}
+p: h3 Capital:
+a(href=`/cities/${country['cities.ID']}`)= country['cities.Name']
+p: h3 Code2: #{country.Code2}
+p: h3 Cities:
+each city in biggestCities
+    a(href=`/cities/${city.ID}`)= city.Name + " Population: " + city.Population
+    br
+
+p: h3 Languages:
+each language in languages
+    p= "Name: " + language.Language
+    p= "Number: " + language.Percentage * country.Population
+    p= "Percentage: " + language.Percentage
+    p= "Official language: " + language.IsOfficial
+    |--------------------------
