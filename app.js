@@ -1,7 +1,6 @@
 var express = require('express');
 var path = require('path');
 
-
 var index = require('./routes/index');
 let countries = require('./routes/countries');
 let cities = require('./routes/cities');

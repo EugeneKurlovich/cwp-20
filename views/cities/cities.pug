@@ -1,0 +1,11 @@
+include ../layout.pug
+
+h1 Cities / #{paginationInfo.offset + 1} - #{paginationInfo.offset + paginationInfo.limit}
+
+each city in citties
+    a(href=`/cities/${city.ID}`)= city.Name
+    br
+
+
+- for (let i = 1; i <= pages; i++)
+    a(href=`/cities?page=${i}` class={active: i === page + 1})= i + ' '

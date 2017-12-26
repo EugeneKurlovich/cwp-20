@@ -14,7 +14,7 @@ class Repository {
         return this.model.findById(id, {raw: true});
     }
 
-    // lul
+    
     readByCriteria(criteria) {
         return this.model.findOne(criteria);
     }
